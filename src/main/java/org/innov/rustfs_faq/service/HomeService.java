@@ -1,3 +1,4 @@
+
 package org.innov.rustfs_faq.service;
 
 import org.innov.rustfs_faq.dto.UploadRequestDTO;
@@ -21,7 +22,13 @@ public class HomeService {
         validationService.validateUploadRequest(request);
         String filename = filePreprocessingService.extractFilename(request.getFile());
         System.out.println("Processing file: " + filename);
-        // TODO
-        return new UploadResponseDTO();
+        // TODO: call RustFS client (Oliver)
+        // TODO: call metadata service (Oliver)
+
+        UploadResponseDTO response = new UploadResponseDTO();
+        response.setDocumentLink("PENDING");
+        response.setDocumentId("PENDING");
+        return response;
+
     }
 }
